@@ -37,7 +37,7 @@ def getMethod(connection, request):
 
 # POST Method
 def postMethod(connection, request):
-    if(request.content == "uname=admin&psw=123456&remember=on"):
+    if(request.content == "uname=admin&psw=123456&remember=on" or request.content == "uname=admin&psw=123456"):
         open("login.txt", "w").write("POST")
         connection.sendall(Response(request.path).transferFile())
     else:
